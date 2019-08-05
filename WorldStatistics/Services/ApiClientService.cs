@@ -61,7 +61,7 @@ namespace WorldStatistics.Services
             {
                 var pageRequestString = requestString + "&" +RequestQueryParam.Page + i;
                 var requestUri = new Uri(pageRequestString);
-                var data = await GetData(requestUri);
+                var data = await GetData(requestUri); 
                 if(data.HasValues)
                     listOfCountries.AddRange(data.ToObject<List<Country>>());
             }
