@@ -1,0 +1,10 @@
+{
+  "ListofCountriesWithHIL": "[{\"id\": \"AUS\",\"name\": \"Australia\"}, {\"id\": \"CAN\", \"name\": \"Canada\"},{\"id\": \"DEU\",\"name\": \"Germany\"},{\"id\": \"ITA\",\"name\": \"Italy\"}, { \"id\": \"JPN\",\"name\": \"Japan\"},{\"id\": \"SGP\",\"name\": \"Singapore\"},{\"id\": \"USA\",\"name\": \"United States\"}]",
+  "AUS": "1432195178668.32",
+  "USA": "20494099845390.2",
+  "SGP": "345678990000033",
+  "JPN": "43534654785684565",
+  "ITA": "46585679505795",
+  "DEU": "45645754433",
+  "CAN": "77554321112154"
+}

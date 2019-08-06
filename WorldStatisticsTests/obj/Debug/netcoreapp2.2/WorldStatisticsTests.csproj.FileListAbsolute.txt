@@ -1,0 +1,17 @@
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatisticsTests.deps.json
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatisticsTests.runtimeconfig.json
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatisticsTests.runtimeconfig.dev.json
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatisticsTests.dll
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatistics.dll
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatistics.pdb
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.csprojAssemblyReference.cache
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.csproj.CoreCompileInputs.cache
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.AssemblyInfoInputs.cache
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.AssemblyInfo.cs
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.csproj.CopyComplete
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\bin\Debug\netcoreapp2.2\WorldStatisticsTests.pdb
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.dll
+C:\Users\sd261867\source\repos\WorldStatistics\WorldStatisticsTests\obj\Debug\netcoreapp2.2\WorldStatisticsTests.pdb
