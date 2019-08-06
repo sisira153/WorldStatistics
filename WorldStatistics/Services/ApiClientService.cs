@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using WorldStatistics.ErrorHandling;
 using WorldStatistics.Models;
 using static WorldStatistics.Constants;
 
@@ -16,22 +17,29 @@ namespace WorldStatistics.Services
         {
             _httpClient = httpClient;
         }
-        
+        private async Task<(bool Response, dynamic DataObject)> GetData(Uri requestUri)
+        {
+            var response = await _httpClient.GetAsync(requestUri);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var dataObj = JsonConvert.DeserializeObject<dynamic>(content)[1];
+                return (Response: true, DataObject: dataObj);
+            }
+            else
+                return (Response: false, DataObject: null);
+
+        }
         public async Task<GDP>GetGDPValue(string countryId, string year)
         {
             var gdpRequest = ConstructCountryGDPRequestUri(countryId, year);
-            var data = await GetData(gdpRequest);
-            if (data.HasValues)
-                return data[0].ToObject<GDP>();
+
+            var (response, dataObject) = await GetData(gdpRequest);
+
+            if (response && dataObject.HasValues)               
+                return dataObject[0].ToObject<GDP>();
             else
                 return null;
-        }
-
-        private async Task<dynamic> GetData(Uri requestUri)
-        {
-            var response = await _httpClient.GetAsync(requestUri);
-            var content = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<dynamic>(content)[1];
         }
 
         private Uri ConstructCountryGDPRequestUri(string countryId, string year)
@@ -53,17 +61,20 @@ namespace WorldStatistics.Services
 
         public async Task<List<Country>> GetCountriesWithHighIncomeLevel()
         {
-            var requestString = "http://api.worldbank.org/v2/country/all?format=json&incomelevel=HIC";
+            var requestString = "http://api.worldbank.org/v2/country?format=json&incomelevel=HIC";
 
             var pageCount = await GetPageCount(requestString);
-            List<Country> listOfCountries = new List<Country>();
+
+            var listOfCountries = new List<Country>();
             for (int i = 1; i <= pageCount; i++)
             {
                 var pageRequestString = requestString + "&" +RequestQueryParam.Page + i;
                 var requestUri = new Uri(pageRequestString);
-                var data = await GetData(requestUri); 
-                if(data.HasValues)
-                    listOfCountries.AddRange(data.ToObject<List<Country>>());
+
+                var (response, dataObject) = await GetData(requestUri); 
+
+                if(response)
+                    listOfCountries.AddRange(dataObject.ToObject<List<Country>>());
             }
             return listOfCountries;
         }
@@ -72,9 +83,14 @@ namespace WorldStatistics.Services
         {
             var requestUri = new Uri(requestString);
             var response = await _httpClient.GetAsync(requestUri);
-            var content = await response.Content.ReadAsStringAsync();
-            var obj = JsonConvert.DeserializeObject<dynamic>(content)[0];
-            return obj["pages"];
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var obj = JsonConvert.DeserializeObject<dynamic>(content)[0];
+                return obj["pages"];
+            }
+            else
+                throw new RequestException("Request to World bank api failed");              
         }
     }
 }

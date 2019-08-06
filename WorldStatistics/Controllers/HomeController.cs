@@ -8,7 +8,7 @@ using WorldStatistics.Services;
 
 namespace WorldStatistics.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class HomeController : ControllerBase
     {
@@ -17,6 +17,8 @@ namespace WorldStatistics.Controllers
         {
             _dataOrganiser = dataOrganiser;
         }
+
+        [Route("toptencountriesbyGDP")]
         [HttpGet]
         public async Task<ActionResult<List<CountryDisplayDetails>>>Get()
         {

@@ -7,11 +7,6 @@ namespace WorldStatistics
 {
     public static class Constants
     {
-        //public static class RequestType
-        //{
-        //    public const string CountriesWithHIC
-        //    public const string Date = "date=";
-        //}
         public static class RequestQueryParam
         {
             public const string Format = "format=";
