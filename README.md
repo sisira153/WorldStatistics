@@ -1,5 +1,5 @@
 # WorldStatistics Api
-This is Web API developed using .Net Core 2.2. 
+This is Web API developed in .Net Core 2.2. 
 It return the Top Ten countries in the world based on GDP Value. 
 This Api consumes World bank api to get required information.
 
